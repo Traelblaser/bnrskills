@@ -4,7 +4,7 @@
         levels: 15,
         required: 9,
         stats: [
-            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 15%"
+            "Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 15%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 30%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 45%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 60%"
@@ -131,23 +131,32 @@
         levels: 10,
         required: 10,
         stats: [
-            "After attacking 5 times, your net skill damage will be increased by 10%"
-            ,"After attacking 5 times, your net skill damage will be increased by 20%"
-            ,"After attacking 5 times, your net skill damage will be increased by 30%"
-            ,"After attacking 5 times, your net skill damage will be increased by 40%"
-            ,"After attacking 5 times, your net skill damage will be increased by 50%"
-            ,"After attacking 5 times, your net skill damage will be increased by 60%"
-            ,"After attacking 5 times, your net skill damage will be increased by 70%"
-            ,"After attacking 5 times, your net skill damage will be increased by 80%"
-            ,"After attacking 5 times, your net skill damage will be increased by 90%"
-            ,"After attacking 5 times, your net skill damage will be increased by 100%"
+            "After attacking 5 times, your next skill damage will be increased by 10%"
+            ,"After attacking 5 times, your next skill damage will be increased by 20%"
+            ,"After attacking 5 times, your next skill damage will be increased by 30%"
+            ,"After attacking 5 times, your next skill damage will be increased by 40%"
+            ,"After attacking 5 times, your next skill damage will be increased by 50%"
+            ,"After attacking 5 times, your next skill damage will be increased by 60%"
+            ,"After attacking 5 times, your next skill damage will be increased by 70%"
+            ,"After attacking 5 times, your next skill damage will be increased by 80%"
+            ,"After attacking 5 times, your next skill damage will be increased by 90%"
+            ,"After attacking 5 times, your next skill damage will be increased by 100%"
         ]
     }, center: {}, right: {
         name: "Elemental Aptitude",
         levels: 10,
         required: 10,
         stats: [
-            "For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 400"
+            "For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 40"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 80"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 120"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 160"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 200"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 240"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 280"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 320"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 360"
+            ,"For every 500 extra STR, increase your Elemental ATK and Elemental DEF by 400"
         ]
     }}
     , { depth: 5, stat: "STR", points: 2430, spend: 40, left: {
