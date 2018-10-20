@@ -1,3 +1,6 @@
+import { Skillrow } from '../../../skillrow';
+
+export const General: Skillrow[] =
 [
     { depth: 1, stat: "STR", points: 1330, spend: 0, left: {
         name: "Flare Armor",
@@ -21,7 +24,7 @@
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 225%"
 
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Greater Stamina",
         levels: 10,
         required: 6,
@@ -109,7 +112,7 @@
             ,"Increases ASPD by 20"
 
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Holy Shelter",
         levels: 10,
         required: 6,
@@ -142,7 +145,7 @@
             ,"After attacking 5 times, your next skill damage will be increased by 90%"
             ,"After attacking 5 times, your next skill damage will be increased by 100%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Elemental Aptitude",
         levels: 10,
         required: 10,
@@ -175,7 +178,7 @@
             ,"Equip the whole set (leggings, armor, gauntlets, boots, helmet) to increase skill damage by 90%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots, helmet) to increase skill damage by 100%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Dragon Blood",
         levels: 10,
         required: 10,
@@ -208,7 +211,7 @@
             ,"Equip the full Grail set to increase grail ATK by 72%"
             ,"Equip the full Grail set to increase grail ATK by 80%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Celestial Shelter",
         levels: 10,
         required: 10,
@@ -241,7 +244,7 @@
             ,"Equip the full Grail set to increase Dmg Reduction by 90%"
             ,"Equip the full Grail set to increase Dmg Reduction by 100%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Bloodrage",
         levels: 10,
         required: 0,
@@ -259,4 +262,4 @@
 
         ]
     }}
-]
+];

@@ -1,3 +1,6 @@
+import { Skillrow } from '../../../skillrow';
+
+export const DEF: Skillrow[] =
 [
     { depth: 1, stat: "STR", points: 1330, spend: 0, left: {
         name: "Energy Drain",
@@ -66,7 +69,7 @@
             ,"Increases duration time of Desperate Hope, Dragon Fury (or Dragon Tempest) by 1.8s. Skill influence times+2"
             ,"Increases duration time of Desperate Hope, Dragon Fury (or Dragon Tempest) by 2.0s. Skill influence times+2"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Heavenly Shield",
         levels: 10,
         required: 6,
@@ -74,7 +77,7 @@
             "Each attack grants an 8% chance to trigger shield effect to increase your Block Rate by 70% over 2s" //10
         ]
     }}
-    , { depth: 3, stat: "STR", points: 1930, spend: 18, left: {}, center: {
+    , { depth: 3, stat: "STR", points: 1930, spend: 18, left: null, center: {
         name: "Wing Mastery",
         levels: 20,
         required: 0,
@@ -100,7 +103,7 @@
             ,"Equip Lv 3+ wings to increase Max HP 28.5%"
             ,"Equip Lv 3+ wings to increase Max HP 30.0%"
         ]
-    }, right: {}}
+    }, right: null}
     , { depth: 4, stat: "STR", points: 2180, spend: 30, left: {
         name: "Last Resort (PvP)",
         levels: 10,
@@ -108,7 +111,7 @@
         stats: [
             "Under Morale Strike or Divine Blessing state, damage dealt+20%, every 1 surrounding enemy player will increase damage dealt by 5%. Can be increased up to 40%" //10
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Elf Divinity",
         levels: 5,
         required: 5,
@@ -123,7 +126,7 @@
         stats: [
             "If you receive deadly attack when in human form, your HP will be restored according to Rage (Every Rage grants 1% HP) and your Rage will be filled up. CD:90s"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Shield Onslaught (PvP)",
         levels: 1,
         required: 1,
@@ -179,7 +182,7 @@
         stats: [
             "Triggers Control Res. for 5s when Rage is higher than 90. CD: 20s"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Forbidden Force (PvP)",
         levels: 10,
         required: 0,
@@ -197,4 +200,4 @@
 
         ]
     }}
-]
+];

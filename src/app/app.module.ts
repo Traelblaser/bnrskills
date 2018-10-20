@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SkillsMasterComponent } from './skills-master/skills-master.component';
 import { SkillDetailComponent } from './skill-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

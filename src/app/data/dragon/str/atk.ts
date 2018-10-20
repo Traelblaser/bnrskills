@@ -1,4 +1,7 @@
-[{ depth: 1, stat: "STR", points: 1330, spend: 0, 
+
+import { Skillrow } from '../../../skillrow';
+
+export const ATK: Skillrow[] = [{ depth: 1, stat: "STR", points: 1330, spend: 0, 
     left: 
         { name: "Dark Slave", levels: 10, required: 6, stats: [
             "Umbra element summoned by Ring of Element will be stronger and possesses 5% of your ATK"
