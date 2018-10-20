@@ -10,11 +10,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./skills-master.component.scss']
 })
 export class SkillsMasterComponent implements OnInit {
-
+  tabs: string[];
   constructor(route: ActivatedRoute) {
     this.route = route; 
     this.selectedSkill = null;
     this.total = 0;
+    this.tabs = ["ATK", "DEF", "General"];
     this.skills = [{ depth: 1, stat: "STR", points: 1330, spend: 0, 
     left: 
         { name: "Dark Slave", levels: 10, required: 6, stats: [
@@ -59,7 +60,16 @@ export class SkillsMasterComponent implements OnInit {
 },
 { depth: 2, stat: "STR", points: 1630, spend: 11,left: {
     name: "Steal", levels: 10, required: 6, stats: [
-        "Attack of Umbra element grants a 12% chance to steal 1 class buff from the target" // 6
+      "Attack of Umbra element grants a 2% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 4% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 6% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 8% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 10% chance to steal 1 class buff from the target"  
+      ,"Attack of Umbra element grants a 12% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 14% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 16% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 18% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 20% chance to steal 1 class buff from the target"
 
     ]
 }, center: null, right: {
@@ -93,12 +103,28 @@ export class SkillsMasterComponent implements OnInit {
 }, right: null},
 { depth: 4, stat: "STR", points: 2180, spend: 30,left: {
     name: "Umbra Guardian", levels: 10, required: 10, stats: [
-        "Each attack of Umbra element grants a 20% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        "Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
         ,"Each attack of Umbra element grants a 20% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
     ]
 }, center: null, right: {
     name: "Awakened Dragon", levels: 10, required: 10, stats: [
-        "Grants a 10% chance to transform directly if Rage maxes out when in human form"
+        "Grants a 1% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 2% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 3% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 4% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 5% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 6% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 7% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 8% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 9% chance to transform directly if Rage maxes out when in human form"
         ,"Grants a 10% chance to transform directly if Rage maxes out when in human form"
     ]
 }},
@@ -116,15 +142,15 @@ export class SkillsMasterComponent implements OnInit {
     levels: 10,
     required: 10,
     stats: [
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
+        "Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
         ,"Every time the Element disappears, it has a 75% chance to summon another Element"
     ]
 
@@ -177,6 +203,8 @@ export class SkillsMasterComponent implements OnInit {
     levels: 10,
     required: 0,
     stats: [
+      "Every time the Element disappears, it has a 25?% chance to trigger Damage Immunity 5x continuously"
+        ,"Every time the Element disappears, it has a 34?% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 42% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 50% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 58% chance to trigger Damage Immunity 5x continuously"
@@ -211,10 +239,10 @@ export class SkillsMasterComponent implements OnInit {
     console.log("init");
     console.log(this.route);
     if (this.route) {
-    const id = this.route.snapshot.paramMap.get('id');
-    
-    console.log(id);
-    if (id) this.load(id);
+      const id = this.route.snapshot.paramMap.get('id');
+      
+      console.log(id);
+      if (id) this.load(id);
     }
     this.updateTotal();
     /*
@@ -264,16 +292,22 @@ export class SkillsMasterComponent implements OnInit {
     let right = 0;
     for(let row of this.skills) {
       if (row.left) {
-        if (left > 0) {
-          row.left.level 
-        }
         left = row.left.required;
+        if (row.left.levels != row.left.stats.length) {
+          console.log("stat mismatch", row.left);
+        }
       }
       if (row.center) {
         center = row.center.required;
+        if (row.center.levels != row.center.stats.length) {
+          console.log("stat mismatch", row.center);
+        }
       }
       if (row.right) {
         right = row.right.required;
+        if (row.right.levels != row.right.stats.length) {
+          console.log("stat mismatch", row.right);
+        }
       }
     }
   }

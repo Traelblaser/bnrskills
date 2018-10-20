@@ -42,10 +42,19 @@
 },
 { depth: 2, stat: "STR", points: 1630, spend: 11,left: {
     name: "Steal", levels: 10, required: 6, stats: [
-        "Attack of Umbra element grants a 12% chance to steal 1 class buff from the target" // 6
+      "Attack of Umbra element grants a 2% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 4% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 6% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 8% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 10% chance to steal 1 class buff from the target"  
+      ,"Attack of Umbra element grants a 12% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 14% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 16% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 18% chance to steal 1 class buff from the target"
+      ,"Attack of Umbra element grants a 20% chance to steal 1 class buff from the target"
 
     ]
-}, center: {}, right: {
+}, center: null, right: {
     name: "Bloody Bite (PvP)", levels: 5, required: 3, stats: [
         "Converts 1% damage dealt to HP when in dragon form"
         ,"Converts 2% damage dealt to HP when in dragon form"
@@ -54,7 +63,7 @@
         ,"Converts 5% damage dealt to HP when in dragon form"
     ]
 }},
-{ depth: 3, stat: "STR", points: 1930, spend: 18,left: {}, center: {
+{ depth: 3, stat: "STR", points: 1930, spend: 18, left: null, center: {
     name: "Dragon Rage", levels: 15, required: 0, stats: [
         "Changes Thunder Tempest effect to summoning dragon flame and deals 400% skill damage to 4 targets within the range (Also valid in PvP)"
         ,"Changes Thunder Tempest effect to summoning dragon flame and deals 425% skill damage to 4 targets within the range (Also valid in PvP)"
@@ -73,15 +82,31 @@
         ,"Changes Thunder Tempest effect to summoning dragon flame and deals 750% skill damage to 4 targets within the range (Also valid in PvP)"
 
     ]
-}, right: {}},
+}, right: null},
 { depth: 4, stat: "STR", points: 2180, spend: 30,left: {
     name: "Umbra Guardian", levels: 10, required: 10, stats: [
-        "Each attack of Umbra element grants a 20% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        "Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
+        ,"Each attack of Umbra element grants a _% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
         ,"Each attack of Umbra element grants a 20% chance to increase your Block Rate by 5%. It can be stacked up to 3x and last for 3s."
     ]
-}, center: {}, right: {
+}, center: null, right: {
     name: "Awakened Dragon", levels: 10, required: 10, stats: [
-        "Grants a 10% chance to transform directly if Rage maxes out when in human form"
+        "Grants a 1% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 2% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 3% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 4% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 5% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 6% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 7% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 8% chance to transform directly if Rage maxes out when in human form"
+        ,"Grants a 9% chance to transform directly if Rage maxes out when in human form"
         ,"Grants a 10% chance to transform directly if Rage maxes out when in human form"
     ]
 }},
@@ -89,7 +114,7 @@
     name: "Umbra Despair", levels: 1, required: 1, stats: [
         "Umbra element will explode when it disappears to deal 400% skill damage to surrounding players and disables them to regen HP for 2s"
     ]
-}, center: {}, right: {
+}, center: null, right: {
     name: "Bloody Tempest (PvP)", levels: 1, required: 1, stats: [
         "When Rage >50, Ignore Defense+100%, damage+200%, 30% damage will be converted to HP for 3s. CD: 60s"
     ]
@@ -99,15 +124,15 @@
     levels: 10,
     required: 10,
     stats: [
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
-        ,"Every time the Element disappears, it has a 75% chance to summon another Element"
+        "Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
+        ,"Every time the Element disappears, it has a 75?% chance to summon another Element"
         ,"Every time the Element disappears, it has a 75% chance to summon another Element"
     ]
 
@@ -160,6 +185,8 @@
     levels: 10,
     required: 0,
     stats: [
+      "Every time the Element disappears, it has a 25?% chance to trigger Damage Immunity 5x continuously"
+        ,"Every time the Element disappears, it has a 34?% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 42% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 50% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 58% chance to trigger Damage Immunity 5x continuously"
@@ -169,7 +196,7 @@
         ,"Every time the Element disappears, it has a 88% chance to trigger Damage Immunity 5x continuously"
         ,"Every time the Element disappears, it has a 100% chance to trigger Damage Immunity 5x continuously"
     ]
-}, center: {}, right: {
+}, center: null, right: {
     name: "Abyss Pillage (PvP)",
     levels: 10,
     required: 0,
@@ -186,4 +213,4 @@
         ,"Every time Dragon Realm hits the target, it will steal 12% of target's ATK and DEF to yourself for 5s. CD: 1s"
     ]
 }}
-]
+];

@@ -1,5 +1,18 @@
 <router-outlet></router-outlet>
 
+<div ngbDropdown class="d-inline-block">
+  <button class="btn btn-outline-primary" id="classChooser" ngbDropdownToggle>Select Class</button>
+  <div ngbDropdownMenu aria-labelledby="classChooser">
+    <button class="dropdown-item">Warrior</button>
+    <button class="dropdown-item">Archer</button>
+    <button class="dropdown-item">Mage</button>
+    <button class="dropdown-item">Dragonkin</button>
+  </div>
+</div>
+
+<ngb-tabset>
+ <ngb-tab *ngFor="let item of tabs" [title]="item">
+    <ng-template ngbTabContent>
 <div *ngIf="skills">
   <table>
     <tr *ngFor="let row of skills">
@@ -18,6 +31,11 @@
     </tr>
   </table>
 </div>
+<button (click)="reset()">Reset</button>
+<button (click)="link()">Link</button>
+<button (click)="checkRules()">Check Rules</button>
+<button (click)="add()">Add</button>
+
 <div>
   Total: {{total}}
 </div>
@@ -30,11 +48,9 @@
 <div>{{selectedSkill.stats[selectedSkill.level-1]}}</div>
 
 </div>
-
-<button (click)="reset()">Reset</button>
-<button (click)="link()">Link</button>
-<button (click)="checkRules()">Check Rules</button>
-<button (click)="add()">Add</button>
+</ng-template>
+</ngb-tab>
+</ngb-tabset>
 
 <a *ngIf="linkText" href="{{linkText}}">{{linkText}}</a>
 
