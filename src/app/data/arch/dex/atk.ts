@@ -82,7 +82,18 @@ export const ATK: Skillrow[] =
       name: "Diehard",
       levels: 10, 
       required: 10,
-      stats: []
+      stats: [
+          "Every 1 Storm Element will increase your ATK and DEF by 1.5% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 3% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 4.5% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 6% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 7.5% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 9% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 10.5% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 12% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 13.5% over 5s, can stack up to 3 times."
+          ,"Every 1 Storm Element will increase your ATK and DEF by 15% over 5s, can stack up to 3 times."
+      ]
   }, center: null, right: {
       name: "Venom Grip",
       levels: 5,
@@ -100,34 +111,93 @@ export const ATK: Skillrow[] =
       name: "Multiple Summon (PvP)",
       levels: 1,
       required: 1,
-      stats: []
+      stats: [
+          "When attacking players, gives a 20% chance to summon a Storm Element with ATK equal to 800% of your Elemental ATK. It lasts for 10s. Can summon up to 3."
+      ]
   }, center: null, right: {
       name: "Natural Curse",
       levels: 1,
       required: 1,
-      stats: []
+      stats: [
+          "Poison Arrow has a 50% chance to curse target and convert 10% target's HP to you per sec over 5s."
+      ]
   }}
   , { depth: 6, stat: "DEX", points: 2460, spend: 45, left: {
       name: "Conquering Blade (PvP)",
       levels: 10,
       required: 10,
-      stats: []
+      stats: [
+          ,"Every time Element attacks target, it will decrease target's DEF by 7.5% and Ignore Defense by 7.5%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 10% and Ignore Defense by 10%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 12.5% and Ignore Defense by 12.5%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 15% and Ignore Defense by 15%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 17.5% and Ignore Defense by 17.5%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 20% and Ignore Defense by 20%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 22.5% and Ignore Defense by 22.5%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 25% and Ignore Defense by 25%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 27.5% and Ignore Defense by 27.5%. Can stack up to 3x."
+          ,"Every time Element attacks target, it will decrease target's DEF by 30% and Ignore Defense by 30%. Can stack up to 3x."
+      ]
   }, center: {
       name: "Wing Master",
       levels: 20,
       required: 0,
-      stats: []
+      stats: [
+        "When equipping Lv 4+ wings, ATK+0.5%"
+        ,"When equipping Lv 4+ wings, ATK+1%"
+        ,"When equipping Lv 4+ wings, ATK+1.5%"
+        ,"When equipping Lv 4+ wings, ATK+2%"
+        ,"When equipping Lv 4+ wings, ATK+2.5%"
+        ,"When equipping Lv 4+ wings, ATK+3%"
+        ,"When equipping Lv 4+ wings, ATK+3.5%"
+        ,"When equipping Lv 4+ wings, ATK+4%"
+        ,"When equipping Lv 4+ wings, ATK+4.5%"
+        ,"When equipping Lv 4+ wings, ATK+5%"
+        ,"When equipping Lv 4+ wings, ATK+5.5%"
+        ,"When equipping Lv 4+ wings, ATK+6%"
+        ,"When equipping Lv 4+ wings, ATK+6.5%"
+        ,"When equipping Lv 4+ wings, ATK+7%"
+        ,"When equipping Lv 4+ wings, ATK+7.5%"
+        ,"When equipping Lv 4+ wings, ATK+8%"
+        ,"When equipping Lv 4+ wings, ATK+8.5%"
+        ,"When equipping Lv 4+ wings, ATK+9%"
+        ,"When equipping Lv 4+ wings, ATK+9.5%"
+        ,"When equipping Lv 4+ wings, ATK+10%"
+
+      ]
   }, right: {
       name: "Void Banish (PvP)",
       levels: 10,
       required: 10,
-      stats: []
+      stats: [
+          "Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 2.6s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 3.2s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 3.8s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 4.4s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 5s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 5.6s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 6.2s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 6.8s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 7.4s"
+          ,"Target hit by Poison Arrow/Venom Arrow will be unable to restore HP for 8s"
+      ]
   }}
   , { depth: 7, stat: "DEX", points: 2500, spend: 60, left: {
       name: "Domain Control",
       levels: 10,
       required: 0,
-      stats: []
+      stats: [
+        "Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+          ,"Using Natural Realm/Divine Realm will deal 80% skill damage to surrounding targets per sec. When Element exists, damage will be increased by 3x over 5s."
+      ]
   }, center: null, right: {
       name: "Death Decay (PvP)",
       levels: 10,
