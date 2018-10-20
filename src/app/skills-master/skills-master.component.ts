@@ -346,6 +346,7 @@ export class SkillsMasterComponent implements OnInit {
 
    }
     skill.level++;
+    this.total++;
   }
 
   private route: ActivatedRoute;
