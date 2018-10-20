@@ -14,6 +14,7 @@ export class SkillsMasterComponent implements OnInit {
   constructor(route: ActivatedRoute) {
     this.route = route; 
     this.selectedSkill = null;
+    this.total = 0;
     this.skills = [{ depth: 1, stat: "STR", points: 1330, spend: 0, 
     left: 
         { name: "Dark Slave", levels: 10, required: 6, stats: [
@@ -203,6 +204,7 @@ export class SkillsMasterComponent implements OnInit {
     ]
 }}
 ];
+  this.reset();
   }
   
   ngOnInit() {
@@ -263,13 +265,20 @@ export class SkillsMasterComponent implements OnInit {
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
     var address = "";
     for (let row of this.skills) {
-      if (row.left)
-        address += alphabet[row.left.level];
-      if (row.center)
-        address += alphabet[row.center.level];
-      if (row.right)
-        address += alphabet[row.right.level];
+      if (row.left) {
+        let level = row.left.level?row.left.level : 0;
+        address += alphabet[level];
+      }
+      if (row.center) {
+        let level = row.center.level?row.center.level:0;
+        address += alphabet[level];
+      }
+      if (row.right) {
+        let level = row.right.level?row.right.level:0;
+        address += alphabet[level];
+      }
     }
+    this.linkText = `/build/${address}`;
     console.log("Address", address);
     return address;
   }
@@ -328,4 +337,6 @@ export class SkillsMasterComponent implements OnInit {
   skills: Skillrow[];
   selectedSkill: Skill;
   selectedRow: Skillrow;
+  linkText: string;
+  total: number;
 }

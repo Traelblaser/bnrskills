@@ -1,4 +1,5 @@
 <router-outlet></router-outlet>
+
 <div *ngIf="skills">
   <table>
     <tr *ngFor="let row of skills">
@@ -17,7 +18,9 @@
     </tr>
   </table>
 </div>
-
+<div>
+  Total: {{total}}
+</div>
 <div *ngIf="selectedRow && selectedSkill">
   <h1>{{selectedSkill.name}}</h1>
 <div>{{selectedRow.stat}}: {{selectedRow.points}}</div>
@@ -31,4 +34,6 @@
 <button (click)="reset()">Reset</button>
 <button (click)="link()">Link</button>
 <button (click)="checkRules()">Check Rules</button>
+
+<a *ngIf="linkText" href="{{linkText}}">{{linkText}}</a>
 
