@@ -15,13 +15,12 @@ import { SkillTree } from '../skill-tree';
 export class SkillsMasterComponent implements OnInit {
   tabs: string[];
   skillTree: SkillTree;
-  
+
   constructor(route: ActivatedRoute) {
     this.route = route; 
     this.selectedSkill = null;
     this.total = 0;
     this.tabs = ["ATK", "DEF", "General"];
-    this.skills = tree.ATK;
     this.skillTree = tree;
     this.reset();
   }
@@ -42,90 +41,62 @@ export class SkillsMasterComponent implements OnInit {
   }
 
   updateTotal() :void {
-    let total = 0;
-    for (let row of this.skills) {
-      if (row.left) total += row.left.level;
-      if (row.center) total += row.center.level;
-      if (row.right) total += row.right.level;
+    let total = 0;  
+    for (let t in this.skillTree) {
+      console.log("t", t);
+      for (let row of this.skillTree[t]) {
+        if (row.left) total += row.left.level;
+        if (row.center) total += row.center.level;
+        if (row.right) total += row.right.level;
+      }
     }
     this.total = total;
   }
   load(id: any) {
     let index = 0;
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
-    for (let row of this.skills) {
-      if (row.left) {
-        row.left.level = alphabet.indexOf(id[index++]);
-      }
-      if (row.center) {
-        row.center.level = alphabet.indexOf(id[index++]);
-      }
-      if (row.right) { 
-        row.right.level = alphabet.indexOf(id[index++]);
+    for (let t in this.skillTree) {
+      console.log("t", t);
+      for (let row of this.skillTree[t]) {
+        if (row.left) {
+          row.left.level = alphabet.indexOf(id[index++]);
+        }
+        if (row.center) {
+          row.center.level = alphabet.indexOf(id[index++]);
+        }
+        if (row.right) { 
+          row.right.level = alphabet.indexOf(id[index++]);
+        }
       }
     }
   }
 
   reset() {
-    for(let row of this.skills) {
+    for (let t in this.skillTree) {
+    for(let row of this.skillTree[t]) {
       if (row.left) row.left.level = 0;
       if (row.center) row.center.level = 0;
       if (row.right) row.right.level = 0;
     }
     this.updateTotal();
+    }
   }
 
   checkRules() {
-    let left = 0;
-    let center = 0;
-    let right = 0;
-    for(let row of this.skills) {
-      if (row.left) {
-        left = row.left.required;
-        if (row.left.levels != row.left.stats.length) {
-          console.log("stat mismatch", row.left);
-        }
-      }
-      if (row.center) {
-        center = row.center.required;
-        if (row.center.levels != row.center.stats.length) {
-          console.log("stat mismatch", row.center);
-        }
-      }
-      if (row.right) {
-        right = row.right.required;
-        if (row.right.levels != row.right.stats.length) {
-          console.log("stat mismatch", row.right);
-        }
-      }
-    }
+    this.skillTree.checkRules();
   }
 
   link() : string {
-    let alphabet = "0123456789ABCDEFGHIJK"; // base 21
-    var address = "";
-    for (let row of this.skills) {
-      if (row.left) {
-        let level = row.left.level?row.left.level : 0;
-        address += alphabet[level];
-      }
-      if (row.center) {
-        let level = row.center.level?row.center.level:0;
-        address += alphabet[level];
-      }
-      if (row.right) {
-        let level = row.right.level?row.right.level:0;
-        address += alphabet[level];
-      }
-    }
+    var address = this.skillTree.link();
     this.linkText = `/build/${address}`;
     console.log("Address", address);
     return address;
   }
 
-  clickRow(row: Skillrow, skill: Skill) {
+  clickRow(row: Skillrow, skill: Skill, tab:string) {
     this.selectedSkill = skill;
     this.selectedRow = row;
+    this.tab = tab;
   }
 
   add() {
@@ -147,47 +118,56 @@ export class SkillsMasterComponent implements OnInit {
     else if (row.right == skill) { pos = 2; }
 
     let total = 0;
-   for (let r of this.skills) {
-      if (row == r) {
-        if (total < row.spend) {
-          return;
+    for (let t in this.skillTree) {
+      console.log("add(t)", t);
+      if (t != this.tab) continue;
+      
+      for (let r of this.skillTree[t]) {
+        if (row == r) {
+          if (total < row.spend) {
+            console.log("haven't spent enough");
+            return;
+          }
+      
+        break;
         }
-    
-      break;
-     }
-    if (r.left) {
-      if (!r.left.level) r.left.level = 0;
-      total+= r.left.level;
-      if (pos == 0 && r.left.level < r.left.required) {
-        return;  
+        if (r.left) {
+          if (!r.left.level) r.left.level = 0;
+            total+= r.left.level;
+            if (pos == 0 && r.left.level < r.left.required) {
+              console.log("left");
+              return;  
+            }
+        }
+        if (r.center) {
+          if (!r.center.level) r.center.level = 0;
+            total+= r.center.level;
+            if (pos == 1 && r.center.level < r.center.required) {
+              console.log("center");
+              return;
+            }
+          }
+        if (r.right) {
+          if (!r.right.level) r.right.level = 0;
+            total+= r.right.level;
+            if (pos == 2 && r.right.level < r.right.required) {
+              console.log("right");
+              return;
+            }
+        }
       }
     }
-    if (r.center) {
-      if (!r.center.level) r.center.level = 0;
-      total+= r.center.level;
-      if (pos == 1 && r.center.level < r.center.required) {
-        return;
-      }
-    }
-    if (r.right) {
-      if (!r.right.level) r.right.level = 0;
-      total+= r.right.level;
-      if (pos == 2 && r.right.level < r.right.required) {
-        return;
-      }
-    }
-
-   }
     skill.level++;
     this.total++;
     this.link();
-
   }
+
   private route: ActivatedRoute;
 
-  skills: Skillrow[];
+  //skills: Skillrow[];
   selectedSkill: Skill;
   selectedRow: Skillrow;
   linkText: string;
   total: number;
+  tab: string;
 }

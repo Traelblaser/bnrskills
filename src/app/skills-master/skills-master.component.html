@@ -10,21 +10,21 @@
   </div>
 </div>
 <ngb-tabset>
- <ngb-tab *ngFor="let item of tabs" [title]="item">
+ <ngb-tab *ngFor="let tab of tabs" [title]="tab">
     <ng-template ngbTabContent>
-      <div *ngIf="skillTree[item]">
+      <div *ngIf="skillTree[tab]">
         <table>
-          <tr *ngFor="let row of skillTree[item]">
+          <tr *ngFor="let row of skillTree[tab]">
             <td>
-              <div *ngIf="row.left" (click)="clickRow(row, row.left)">{{row.left.name}} {{row.left.level ? row.left.level : '0'}} / {{row.left.levels}}</div>
+              <div *ngIf="row.left" (click)="clickRow(row, row.left, tab)">{{row.left.name}} {{row.left.level ? row.left.level : '0'}} / {{row.left.levels}}</div>
               <div *ngIf=!row.left>&nbsp;</div>
             </td>
             <td>
-              <div *ngIf="row.center" (click)="clickRow(row, row.center)">{{row.center.name}} {{row.center.level ? row.center.level : '0'}} / {{row.center.levels}}</div>
+              <div *ngIf="row.center" (click)="clickRow(row, row.center, tab)">{{row.center.name}} {{row.center.level ? row.center.level : '0'}} / {{row.center.levels}}</div>
               <div *ngIf="!row.center">&nbsp;</div>
             </td>
             <td>
-              <div *ngIf="row.right" (click)="clickRow(row, row.right)">{{row.right.name}} {{row.right.level ? row.right.level : '0'}} / {{row.right.levels}}</div>
+              <div *ngIf="row.right" (click)="clickRow(row, row.right, tab)">{{row.right.name}} {{row.right.level ? row.right.level : '0'}} / {{row.right.levels}}</div>
               <div *ngIf="!row.right">&nbsp;</div>
             </td>
           </tr>
