@@ -210,8 +210,9 @@ export class SkillsMasterComponent implements OnInit {
     console.log(this.route);
     if (this.route) {
     const id = this.route.snapshot.paramMap.get('id');
+    
     console.log(id);
-    this.load(id);
+    if (id) this.load(id);
     }
     /*
     this.route.paramMap.pipe(
@@ -238,6 +239,26 @@ export class SkillsMasterComponent implements OnInit {
     }
   }
 
+  checkRules() {
+    let left = 0;
+    let center = 0;
+    let right = 0;
+    for(let row of this.skills) {
+      if (row.left) {
+        if (left > 0) {
+          row.left.level 
+        }
+        left = row.left.required;
+      }
+      if (row.center) {
+        center = row.center.required;
+      }
+      if (row.right) {
+        right = row.right.required;
+      }
+    }
+  }
+
   link() : string {
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
     var address = "";
@@ -261,7 +282,44 @@ export class SkillsMasterComponent implements OnInit {
       skill.level = skill.levels;
       return;
     }
+    
+    let pos = -1;
+    if (row.left == skill) { pos = 0;}
+    else if (row.center == skill) { pos = 1; }
+    else if (row.right == skill) { pos = 2; }
 
+    let total = 0;
+   for (let r of this.skills) {
+      if (row == r) {
+        if (total < row.spend) {
+          return;
+        }
+    
+      break;
+     }
+    if (r.left) {
+      if (!r.left.level) r.left.level = 0;
+      total+= r.left.level;
+      if (pos == 0 && r.left.level < r.left.required) {
+        return;  
+      }
+    }
+    if (r.center) {
+      if (!r.center.level) r.center.level = 0;
+      total+= r.center.level;
+      if (pos == 1 && r.center.level < r.center.required) {
+        return;
+      }
+    }
+    if (r.right) {
+      if (!r.right.level) r.right.level = 0;
+      total+= r.right.level;
+      if (pos == 2 && r.right.level < r.right.required) {
+        return;
+      }
+    }
+
+   }
     skill.level++;
   }
 
