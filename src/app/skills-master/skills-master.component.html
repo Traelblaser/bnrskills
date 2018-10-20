@@ -1,0 +1,29 @@
+<div *ngIf="skills">
+  <table>
+    <tr *ngFor="let row of skills">
+      <td>
+        <div *ngIf="row.left" (click)="clickRow(row, row.left)">{{row.left.name}} {{row.left.level ? row.left.level : '0'}} / {{row.left.levels}}</div>
+        <div *ngIf=!row.left>&nbsp;</div>
+      </td>
+      <td>
+        <div *ngIf="row.center" (click)="clickRow(row, row.center)">{{row.center.name}} {{row.center.level ? row.center.level : '0'}} / {{row.center.levels}}</div>
+        <div *ngIf="!row.center">&nbsp;</div>
+      </td>
+      <td>
+        <div *ngIf="row.right" (click)="clickRow(row, row.right)">{{row.right.name}} {{row.right.level ? row.right.level : '0'}} / {{row.right.levels}}</div>
+        <div *ngIf="!row.right">&nbsp;</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <h1>{{selectedSkill.name}}</h1>
+<div>{{selectedRow.stat}}: {{selectedRow.points}}</div>
+<div>Requires {{selectedRow.spend}} points to be spent.</div>
+<div>{{selectedSkill.levels}}</div>
+<div>{{selectedSkill.required}}</div>
+<div>{{selectedSkill.stats[selectedSkill.level]}}</div>
+
+</div>
+

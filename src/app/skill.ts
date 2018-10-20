@@ -3,5 +3,6 @@ export class Skill {
     levels: number;
     required: number;
     stats: string[];
+    level?: number;
 }
 
