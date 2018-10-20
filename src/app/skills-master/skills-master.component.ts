@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
 import { Skillrow } from '../skillrow';
 import { Skill } from '../skill';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-skills-master',
@@ -9,7 +11,8 @@ import { Skill } from '../skill';
 })
 export class SkillsMasterComponent implements OnInit {
 
-  constructor() { 
+  constructor(route: ActivatedRoute) {
+    this.route = route; 
     this.selectedSkill = null;
     this.skills = [{ depth: 1, stat: "STR", points: 1330, spend: 0, 
     left: 
@@ -201,16 +204,68 @@ export class SkillsMasterComponent implements OnInit {
 }}
 ];
   }
-
+  
   ngOnInit() {
+    console.log("init");
+    console.log(this.route);
+    if (this.route) {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
+    this.load(id);
+    }
+    /*
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => this.load(params.get("id")))
+    );
+    */
+  }
+
+  load(id: any) {
+    let index = 0;
+    let alphabet = "0123456789ABCDEFGHIJK"; // base 21
+    for (let row of this.skills) {
+      if (row.left) row.left.level = alphabet.indexOf(id[index++]);
+      if (row.center) row.center.level = alphabet.indexOf(id[index++]);
+      if (row.right) row.right.level = alphabet.indexOf(id[index++]);
+    }
+  }
+
+  reset() {
+    for(let row of this.skills) {
+      if (row.left) row.left.level = 0;
+      if (row.center) row.center.level = 0;
+      if (row.right) row.right.level = 0;
+    }
+  }
+
+  link() : string {
+    let alphabet = "0123456789ABCDEFGHIJK"; // base 21
+    var address = "";
+    for (let row of this.skills) {
+      if (row.left)
+        address += alphabet[row.left.level];
+      if (row.center)
+        address += alphabet[row.center.level];
+      if (row.right)
+        address += alphabet[row.right.level];
+    }
+    console.log("Address", address);
+    return address;
   }
 
   clickRow(row: Skillrow, skill: Skill) {
     this.selectedSkill = skill;
     this.selectedRow = row;
     if (!skill.level) skill.level = 0;
+    if (skill.level >= skill.levels) {
+      skill.level = skill.levels;
+      return;
+    }
+
     skill.level++;
   }
+
+  private route: ActivatedRoute;
 
   skills: Skillrow[];
   selectedSkill: Skill;

@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SkillsMasterComponent } from './skills-master/skills-master.component';
 
 const routes: Routes = [
-  { path: 'skills', component: SkillsMasterComponent}
+  { path: 'skills', component: SkillsMasterComponent},
+  { path: 'build/:id', component: SkillsMasterComponent}
 ];
 
 @NgModule({

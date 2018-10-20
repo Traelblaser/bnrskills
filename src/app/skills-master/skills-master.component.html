@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <div *ngIf="skills">
   <table>
     <tr *ngFor="let row of skills">
@@ -17,13 +18,16 @@
   </table>
 </div>
 
-<div>
+<div *ngIf="selectedRow && selectedSkill">
   <h1>{{selectedSkill.name}}</h1>
 <div>{{selectedRow.stat}}: {{selectedRow.points}}</div>
 <div>Requires {{selectedRow.spend}} points to be spent.</div>
-<div>{{selectedSkill.levels}}</div>
+<div>{{selectedSkill.level}} / {{selectedSkill.levels}}</div>
 <div>{{selectedSkill.required}}</div>
-<div>{{selectedSkill.stats[selectedSkill.level]}}</div>
+<div>{{selectedSkill.stats[selectedSkill.level-1]}}</div>
 
 </div>
+
+<button (click)="reset()">Reset</button>
+<button (click)="link()">Link</button>
 
