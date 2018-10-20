@@ -255,6 +255,7 @@ export class SkillsMasterComponent implements OnInit {
       if (row.center) row.center.level = 0;
       if (row.right) row.right.level = 0;
     }
+    this.updateTotal();
   }
 
   checkRules() {
@@ -302,6 +303,15 @@ export class SkillsMasterComponent implements OnInit {
   clickRow(row: Skillrow, skill: Skill) {
     this.selectedSkill = skill;
     this.selectedRow = row;
+  }
+
+  add() {
+    let skill = this.selectedSkill;
+    let row = this.selectedRow;
+
+    if (!skill) return;
+    if (!row) return;
+
     if (!skill.level) skill.level = 0;
     if (skill.level >= skill.levels) {
       skill.level = skill.levels;
@@ -347,8 +357,9 @@ export class SkillsMasterComponent implements OnInit {
    }
     skill.level++;
     this.total++;
-  }
+    this.link();
 
+  }
   private route: ActivatedRoute;
 
   skills: Skillrow[];
