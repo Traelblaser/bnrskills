@@ -6,6 +6,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { tree } from '../data/dragon/str/module';
 import { SkillTree } from '../skill-tree';
+import { SkillTreeService } from '../skill-tree.service';
 
 @Component({
   selector: 'app-skills-master',
@@ -16,9 +17,10 @@ export class SkillsMasterComponent implements OnInit {
   tabs: string[];
   skillTree: SkillTree;
 
-  constructor(route: ActivatedRoute) {
+  constructor(route: ActivatedRoute, skillTreeService: SkillTreeService) {
     this.route = route; 
     this.selectedSkill = null;
+    this.skillTreeService = skillTreeService;
     this.total = 0;
     this.tabs = ["ATK", "DEF", "General"];
     this.skillTree = tree;
@@ -41,7 +43,7 @@ export class SkillsMasterComponent implements OnInit {
   }
 
   updateTotal() :void {
-    let total = 0;  
+    let total = 0;
     for (let t in this.skillTree) {
       console.log("t", t);
       for (let row of this.skillTree[t]) {
@@ -56,7 +58,6 @@ export class SkillsMasterComponent implements OnInit {
     let index = 0;
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
     for (let t in this.skillTree) {
-      console.log("t", t);
       for (let row of this.skillTree[t]) {
         if (row.left) {
           row.left.level = alphabet.indexOf(id[index++]);
@@ -83,11 +84,11 @@ export class SkillsMasterComponent implements OnInit {
   }
 
   checkRules() {
-    this.skillTree.checkRules();
+    this.skillTreeService.checkRules(this.skillTree);
   }
 
   link() : string {
-    var address = this.skillTree.link();
+    var address = this.skillTreeService.link(this.skillTree);
     this.linkText = `/build/${address}`;
     console.log("Address", address);
     return address;
@@ -117,16 +118,31 @@ export class SkillsMasterComponent implements OnInit {
     else if (row.center == skill) { pos = 1; }
     else if (row.right == skill) { pos = 2; }
 
+    let totalAtk = this.skillTreeService.getAtkTotal(this.skillTree);
+    let totalDef = this.skillTreeService.getDefTotal(this.skillTree);
+    
     let total = 0;
     for (let t in this.skillTree) {
       console.log("add(t)", t);
       if (t != this.tab) continue;
-      
+
       for (let r of this.skillTree[t]) {
         if (row == r) {
-          if (total < row.spend) {
-            console.log("haven't spent enough");
-            return;
+          if (t == "ATK" || t == "DEF") {
+            if (total < row.spend) {
+              console.log("haven't spent enough");
+              return;
+            }
+          }
+          else {
+            if (pos == 0 && totalAtk < row.spend) {
+              console.log("haven't spent enough in ATK");
+              return;
+            }
+            if (pos != 0 && totalDef < row.spend) {
+              console.log("haven't spent enough in DEF");
+              return;
+            }
           }
       
         break;
@@ -170,4 +186,5 @@ export class SkillsMasterComponent implements OnInit {
   linkText: string;
   total: number;
   tab: string;
+  skillTreeService: SkillTreeService;
 }

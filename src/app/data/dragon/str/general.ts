@@ -2,7 +2,7 @@ import { Skillrow } from '../../../skillrow';
 
 export const General: Skillrow[] =
 [
-    { depth: 1, stat: "STR", points: 1330, spend: 0, left: {
+    { depth: 1, stat: "STR", points: 1330, spend: 6, left: {
         name: "Flare Armor",
         levels: 15,
         required: 9,
