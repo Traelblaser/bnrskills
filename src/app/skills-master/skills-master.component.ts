@@ -216,6 +216,7 @@ export class SkillsMasterComponent implements OnInit {
     console.log(id);
     if (id) this.load(id);
     }
+    this.updateTotal();
     /*
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.load(params.get("id")))
@@ -223,13 +224,28 @@ export class SkillsMasterComponent implements OnInit {
     */
   }
 
+  updateTotal() :void {
+    let total = 0;
+    for (let row of this.skills) {
+      if (row.left) total += row.left.level;
+      if (row.center) total += row.center.level;
+      if (row.right) total += row.right.level;
+    }
+    this.total = total;
+  }
   load(id: any) {
     let index = 0;
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
     for (let row of this.skills) {
-      if (row.left) row.left.level = alphabet.indexOf(id[index++]);
-      if (row.center) row.center.level = alphabet.indexOf(id[index++]);
-      if (row.right) row.right.level = alphabet.indexOf(id[index++]);
+      if (row.left) {
+        row.left.level = alphabet.indexOf(id[index++]);
+      }
+      if (row.center) {
+        row.center.level = alphabet.indexOf(id[index++]);
+      }
+      if (row.right) { 
+        row.right.level = alphabet.indexOf(id[index++]);
+      }
     }
   }
 
