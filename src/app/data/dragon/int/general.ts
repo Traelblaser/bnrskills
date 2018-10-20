@@ -1,3 +1,6 @@
+import { Skillrow } from '../../../skillrow';
+
+export const General: Skillrow[] =
 [
     { depth: 1, stat: "INT", points: 550, spend: 6, left: {
         name: "Emerald Armor",
@@ -20,7 +23,7 @@
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 210%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 225%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Wisdom Lineage",
         levels: 10,
         required: 6,
@@ -109,7 +112,7 @@
         ,"Increases ASPD by 20"
 
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Holy Shelter",
       levels: 10,
       required: 6,
@@ -144,21 +147,21 @@
         ,"After attacking 5 times, your next skill damage will be increased by 100%"
 
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Elemental Aptitude",
       levels: 10,
       required: 10,
       stats: [
-          ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 40"
+          "For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 40"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 80"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 120"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 160"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 200"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 240"
           ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 280"
-        ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 320"
-        ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 360"
-        ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 400"
+          ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 320"
+          ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 360"
+          ,"For every 380 extra INT, increase your Elemental ATK and Elemental DEF by 400"
       ]
   }}
   , { depth: 5, stat: "INT", points: 1650, spend: 40, left: {
@@ -178,7 +181,7 @@
         ,"Equip the whole set (leggings, armor, gauntlets, boots, helmet) to increase skill damage by 100%"
 
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Dragon Blood",
       levels: 10,
       required: 10,
@@ -213,7 +216,7 @@
         ,"Equip the full Grail set to increase grail ATK by 80%"
 
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Celestial Shelter",
       levels: 10,
       required: 10,
@@ -248,7 +251,7 @@
         ,"Equip the full Grail set to increase Dmg Reduction by 100%"
 
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Bloodrage",
       levels: 10,
       required: 10,
@@ -266,4 +269,4 @@
 
       ]
   }}
-]
+];

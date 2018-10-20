@@ -4,9 +4,10 @@ import { Skillrow } from '../skillrow';
 import { Skill } from '../skill';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { tree } from '../data/dragon/str/module';
-import { SkillTree } from '../skill-tree';
+import { StrTree } from '../data/dragon/str/module';
+import { StatFamily } from '../stat-family';
 import { SkillTreeService } from '../skill-tree.service';
+import { ClassService } from '../class.service';
 
 @Component({
   selector: 'app-skills-master',
@@ -15,15 +16,19 @@ import { SkillTreeService } from '../skill-tree.service';
 })
 export class SkillsMasterComponent implements OnInit {
   tabs: string[];
-  skillTree: SkillTree;
+  skillTree: StatFamily;
+  stats: string[];
+  classService: ClassService;
 
-  constructor(route: ActivatedRoute, skillTreeService: SkillTreeService) {
+  constructor(route: ActivatedRoute, skillTreeService: SkillTreeService, classService: ClassService) {
     this.route = route; 
     this.selectedSkill = null;
     this.skillTreeService = skillTreeService;
     this.total = 0;
+    this.classService = classService;
+    this.stats = this.classService.getStats("Dragonkin");
     this.tabs = ["ATK", "DEF", "General"];
-    this.skillTree = tree;
+    this.skillTree = StrTree;
     this.reset();
   }
   
@@ -45,7 +50,6 @@ export class SkillsMasterComponent implements OnInit {
   updateTotal() :void {
     let total = 0;
     for (let t in this.skillTree) {
-      console.log("t", t);
       for (let row of this.skillTree[t]) {
         if (row.left) total += row.left.level;
         if (row.center) total += row.center.level;
@@ -90,7 +94,6 @@ export class SkillsMasterComponent implements OnInit {
   link() : string {
     var address = this.skillTreeService.link(this.skillTree);
     this.linkText = `/build/${address}`;
-    console.log("Address", address);
     return address;
   }
 
@@ -123,7 +126,6 @@ export class SkillsMasterComponent implements OnInit {
     
     let total = 0;
     for (let t in this.skillTree) {
-      console.log("add(t)", t);
       if (t != this.tab) continue;
 
       for (let r of this.skillTree[t]) {
@@ -178,9 +180,19 @@ export class SkillsMasterComponent implements OnInit {
     this.link();
   }
 
+  selectClass(selectedClass) : void {
+    this.stats = this.classService.getStats(selectedClass);
+    this.selectedClass = selectedClass;
+  }
+  selectFamily(selectedClass, selectedFamily) : void {
+    let tree = this.skillTreeService.getTree(selectedClass, selectedFamily);
+    this.skillTree = tree;
+  }
+
   private route: ActivatedRoute;
 
   //skills: Skillrow[];
+  selectedClass: string;
   selectedSkill: Skill;
   selectedRow: Skillrow;
   linkText: string;

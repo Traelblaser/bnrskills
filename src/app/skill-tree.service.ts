@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SkillTree } from './skill-tree';
+import { StatFamily } from './stat-family';
 import { Skillrow } from './skillrow';
+
+import { SkillTree } from './skill-tree';
+import { Dragon } from './data/dragon/module';
+//import { Archer } from './data/arch/module';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +13,7 @@ export class SkillTreeService{
 
   constructor() { }
 
-  link(tree: SkillTree) : string {
+  link(tree: StatFamily) : string {
     var address = "";
     address += this.subTreeLink(tree.ATK);
     address += this.subTreeLink(tree.DEF);
@@ -26,15 +30,15 @@ private getTotal(tree : Skillrow[]) : number {
     }
     return total;
 }
-getAtkTotal(tree : SkillTree) : number {
+getAtkTotal(tree : StatFamily) : number {
     return this.getTotal(tree.ATK);
 }
 
-getDefTotal(tree : SkillTree) : number {
+getDefTotal(tree : StatFamily) : number {
     return this.getTotal(tree.DEF);
 }
 
-getGeneralTotal(tree: SkillTree) : number {
+getGeneralTotal(tree: StatFamily) : number {
     return this.getTotal(tree.General);
 }
 
@@ -59,10 +63,25 @@ private subTreeLink?(tree: Skillrow[]) : string {
 
 }
 
-checkRules(tree: SkillTree) : void {
+checkRules(tree: StatFamily) : void {
     this.checkRulesSubTree(tree.ATK);
     this.checkRulesSubTree(tree.DEF);
     this.checkRulesSubTree(tree.General);
+}
+
+loadTrees() :void {
+
+}
+
+getTree(playerClass: string, playerFamily: string) : any {
+  console.log(playerClass, playerFamily);
+  if (playerClass == "Dragonkin") {
+      if (Dragon.stats.includes(playerFamily)) {
+        
+        if (playerFamily == "STR") return Dragon.SkillTrees[0];
+        return Dragon.SkillTrees[1];
+      }
+  }
 }
 
 private checkRulesSubTree?(tree: Skillrow[]) : void {

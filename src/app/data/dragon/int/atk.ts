@@ -1,3 +1,6 @@
+import { Skillrow } from '../../../skillrow';
+
+export const ATK: Skillrow[] = 
 [
       { depth: 1, stat: "INT", points: 550, spend: 0, left: {
           name: "Overthrow (PvP)",
@@ -41,7 +44,7 @@
         stats: [
             "Deals 20% extra damage if target's shield is broken."
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Scorching Flame",
         levels: 10,
         required: 6,
@@ -51,7 +54,7 @@
 
         ]
     }}
-    , { depth: 3, stat: "INT", points: 1150, spend: 18, left: {}, center: {
+    , { depth: 3, stat: "INT", points: 1150, spend: 18, left: null, center: {
         name: "Fireball",
         levels: 15,
         required: 0,
@@ -96,7 +99,7 @@
         stats: [
             "Use Ring of Shadow to increase the chance of slaying enemy whose shield is broken by 25%"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Bloody Blow (PvP)",
         levels: 5,
         required: 5,
@@ -111,7 +114,7 @@
         stats: [
             "When transforming into a dragon, your Ignore Defense will be increased by 100% over 3s when attacking players"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Piercing Strike (PvP)",
         levels: 1,
         required: 1,
@@ -167,7 +170,7 @@
         stats: [
             "Under Dragon Tempest, your attack will deal 20% extra crit damage, 150% extra skill damage, and ignore target's DMG Down stat"
         ]
-    }, center: {}, right: {
+    }, center: null, right: {
         name: "Doom Blow (PvP)",
         levels: 10,
         required: 0,
@@ -175,4 +178,4 @@
             "When it attacks target under Lethal state, each Lethal effect will decrease target's Dodge by 20% and Block by 10%"
         ]
     }}
-]
+];

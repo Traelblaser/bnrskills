@@ -1,3 +1,7 @@
+import { Skillrow } from '../../../skillrow';
+
+export const ATK: Skillrow[] = 
+
 [
     { depth: 1, stat: "DEX", points: 1400, spend: 0, left: {
         name: "Storm Element",
@@ -41,7 +45,7 @@
       stats: [
           "Every time Storm Element attacks, it grants a 10% chance to deal 3X etra damage" //10
       ]
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Dark Hold (PvP)",
       levels: 10,
       required: 6,
@@ -51,7 +55,7 @@
 
       ]
   }}
-  , { depth: 3, stat: "DEX", points: 2000, spend: 18, left: {}, center: {
+  , { depth: 3, stat: "DEX", points: 2000, spend: 18, left: null, center: {
       name: "Venom Spray",
       levels: 15,
       required: 0,
@@ -73,13 +77,13 @@
           ,"Changes T. Tempest to V. Spray: Deals 700% dmg to 4 targets. Has a 50% chance to poison them for 4s with 100% dmg per sec."
 
       ]
-  }, right: {}}
+  }, right: null}
   , { depth: 4, stat: "DEX", points: 2250, spend: 30, left: {
       name: "Diehard",
       levels: 10, 
       required: 10,
       stats: []
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Venom Grip",
       levels: 5,
       required: 5,
@@ -94,10 +98,10 @@
   }}
   , { depth: 5, stat: "DEX", points: 2500, spend: 40, left: {
       name: "Multiple Summon (PvP)",
-      Levels: 1,
+      levels: 1,
       required: 1,
       stats: []
-  }, center: {}, right: {
+  }, center: null, right: {
       name: "Natural Curse",
       levels: 1,
       required: 1,
@@ -119,5 +123,26 @@
       required: 10,
       stats: []
   }}
-  , { depth: 7, stat: "DEX", points: 2500, spend: 60, left: {}, center: {}, right: {}}
-]
+  , { depth: 7, stat: "DEX", points: 2500, spend: 60, left: {
+      name: "Domain Control",
+      levels: 10,
+      required: 0,
+      stats: []
+  }, center: null, right: {
+      name: "Death Decay (PvP)",
+      levels: 10,
+      required: 0,
+      stats: [
+          "When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 7.5% and ATK by 15% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 10% and ATK by 20% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 12.5% and ATK by 25% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 15% and ATK by 30% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 17.5% and ATK by 35% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 20% and ATK by 40% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 22.5% and ATK by 45% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 25% and ATK by 50% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 27.5% and ATK by 55% over 4s."
+          ,"When Natural Realm/Divine Realm hits target, it will decrease target's Max HP by 30% and ATK by 60% over 4s."
+      ]
+  }}
+];

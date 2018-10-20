@@ -1,8 +1,6 @@
-import { Skillrow } from "./skillrow";
-
+import { StatFamily } from "./stat-family";
 
 export class SkillTree {
-    ATK: Skillrow[];
-    DEF: Skillrow[];
-    General: Skillrow[];
- }
+    SkillTrees : StatFamily[];
+    stats: string[];
+}

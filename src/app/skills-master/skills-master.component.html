@@ -3,11 +3,17 @@
 <div ngbDropdown class="d-inline-block">
   <button class="btn btn-outline-primary" id="classChooser" ngbDropdownToggle>Select Class</button>
   <div ngbDropdownMenu aria-labelledby="classChooser">
-    <button class="dropdown-item">Warrior</button>
-    <button class="dropdown-item">Archer</button>
-    <button class="dropdown-item">Mage</button>
-    <button class="dropdown-item">Dragonkin</button>
+    <button class="dropdown-item" (click)="selectClass('Warrior')">Warrior</button>
+    <button class="dropdown-item" (click)="selectClass('Archer')">Archer</button>
+    <button class="dropdown-item" (click)="selectClass('Mage')">Mage</button>
+    <button class="dropdown-item" (click)="selectClass('Dragonkin')">Dragonkin</button>
   </div>
+</div>
+<br />
+<div class="btn-group btn-group-toggle" ngbRadioGroup="statGroup">
+  <label *ngFor="let statValue of stats" ngbButtonLabel class="btn-primary">
+    <input ngbButton type="radio" [value]="statValue" (click)="selectFamily(selectedClass, statValue)">{{statValue}}
+  </label>
 </div>
 <ngb-tabset>
  <ngb-tab *ngFor="let tab of tabs" [title]="tab">
