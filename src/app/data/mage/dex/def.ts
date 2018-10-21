@@ -2,7 +2,7 @@ import { Skillrow } from '../../../skillrow';
 
 export const DEF: Skillrow[] =
 [
-{ depth: 1, stat: "DEX", points: 1330, spend: 6, left: {
+{ depth: 1, stat: "DEX", points: 1330, spend: 0, left: {
     name: "Divine Guard",
     levels: 5,
     required: 3,

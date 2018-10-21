@@ -1,6 +1,6 @@
 import { StatFamily } from "./stat-family";
 
 export class SkillTree {
-    SkillTrees : StatFamily[];
-    stats: string[];
+    public SkillTrees : StatFamily[];
+    public stats: string[];
 }

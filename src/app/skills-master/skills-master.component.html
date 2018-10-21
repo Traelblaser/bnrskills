@@ -18,9 +18,9 @@
 <ngb-tabset>
  <ngb-tab *ngFor="let tab of tabs" [title]="tab">
     <ng-template ngbTabContent>
-      <div *ngIf="skillTree[tab]">
+      <div *ngIf="skillTree">
         <table>
-          <tr *ngFor="let row of skillTree[tab]">
+          <tr *ngFor="let row of skillTree.SkillTrees[statIndex][tab]">
             <td>
               <div *ngIf="row.left" (click)="clickRow(row, row.left, tab)">{{row.left.name}} {{row.left.level ? row.left.level : '0'}} / {{row.left.levels}}</div>
               <div *ngIf=!row.left>&nbsp;</div>

@@ -2,10 +2,10 @@ import { Skillrow } from '../../../skillrow';
 
 export const ATK: Skillrow[] = 
 [
-{ depth: 1, stat: "DEX", points: 1330, spend: 6, left: {
+{ depth: 1, stat: "DEX", points: 1330, spend: 0, left: {
     name: "Dark Thunder",
     levels: 10,
-    required: 6,
+    required: 0,
     stats: []
 }, center: {
     name: "Celestial Blessing",
