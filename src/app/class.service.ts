@@ -20,9 +20,6 @@ export class ClassService {
     return STATS[playerClass];
   }
 
-  getSkillTrees(playerClass: string, stat: string) : any {
-    return SkillTree;
-  }
 }
 
 const STATS = {

@@ -68,7 +68,28 @@ right: {
     name: "Wing Master",
     levels: 20,
     required: 0,
-    stats: []
+    stats: [
+        "When equipping Lv 4+ wings, ATK+0.5%"
+        ,"When equipping Lv 4+ wings, ATK+1%"
+        ,"When equipping Lv 4+ wings, ATK+1.5%"
+        ,"When equipping Lv 4+ wings, ATK+2%"
+        ,"When equipping Lv 4+ wings, ATK+2.5%"
+        ,"When equipping Lv 4+ wings, ATK+3%"
+        ,"When equipping Lv 4+ wings, ATK+3.5%"
+        ,"When equipping Lv 4+ wings, ATK+4%"
+        ,"When equipping Lv 4+ wings, ATK+4.5%"
+        ,"When equipping Lv 4+ wings, ATK+5%"
+        ,"When equipping Lv 4+ wings, ATK+5.5%"
+        ,"When equipping Lv 4+ wings, ATK+6%"
+        ,"When equipping Lv 4+ wings, ATK+6.5%"
+        ,"When equipping Lv 4+ wings, ATK+7%"
+        ,"When equipping Lv 4+ wings, ATK+7.5%"
+        ,"When equipping Lv 4+ wings, ATK+8%"
+        ,"When equipping Lv 4+ wings, ATK+8.5%"
+        ,"When equipping Lv 4+ wings, ATK+9%"
+        ,"When equipping Lv 4+ wings, ATK+9.5%"
+        ,"When equipping Lv 4+ wings, ATK+10%"
+    ]
 }, right: {
     name: "Spirit Morale (PvP)",
     levels: 10,

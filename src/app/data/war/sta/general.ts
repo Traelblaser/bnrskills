@@ -24,13 +24,13 @@ export const General: Skillrow[] = [
             levels: 15,
             required: 10,
             stats: []
-        }, 
+        },
         center: {
             name: "DEF Enhance",
             levels: 10,
             required: 0,
             stats: []
-        }, 
+        },
         right: {
 
             name: "Enhanced Power",
@@ -46,7 +46,7 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 6,
             stats: []
-        }, 
+        },
         right: {
             name: "Life Boost",
             levels: 10,

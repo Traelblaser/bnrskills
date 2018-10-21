@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Skillrow } from '../skillrow';
 import { Skill } from '../skill';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { StrTree } from '../data/dragon/str/module';
 import { StatFamily } from '../stat-family';
 import { SkillTreeService } from '../skill-tree.service';
 import { ClassService } from '../class.service';
@@ -26,24 +25,22 @@ export class SkillsMasterComponent implements OnInit {
     this.skillTreeService = skillTreeService;
     this.total = 0;
     this.classService = classService;
-    this.stats = this.classService.getStats("Dragonkin");
     this.tabs = ["ATK", "DEF", "General"];
-    this.skillTree = StrTree;
     this.reset();
   }
   
   ngOnInit() {
     if (this.route) {
+      const role = this.route.snapshot.paramMap.get("role");
       const id = this.route.snapshot.paramMap.get('id');
-      
-      if (id) this.load(id);
+      if (id) this.load(role, id);
+    }
+    else {
+      this.selectedClass="Warrior";
+      this.stats = this.classService.getStats(this.selectedClass);
+      this.skillTree = this.skillTreeService.getTree(this.selectedClass, this.stats[0]);
     }
     this.updateTotal();
-    /*
-    this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.load(params.get("id")))
-    );
-    */
   }
 
   updateTotal() :void {
@@ -57,9 +54,13 @@ export class SkillsMasterComponent implements OnInit {
     }
     this.total = total;
   }
-  load(id: any) {
+  load(role: any, id: any) {
     let index = 0;
     let alphabet = "0123456789ABCDEFGHIJK"; // base 21
+    this.selectedClass = role;
+    this.stats = this.classService.getStats(this.selectedClass);
+    this.skillTree = this.skillTreeService.getTree(this.selectedClass, this.stats[0]);
+
     for (let t in this.skillTree) {
       for (let row of this.skillTree[t]) {
         if (row.left) {
@@ -92,7 +93,7 @@ export class SkillsMasterComponent implements OnInit {
 
   link() : string {
     var address = this.skillTreeService.link(this.skillTree);
-    this.linkText = `/build/${address}`;
+    this.linkText = `/skills/build/${this.selectedClass}/${address}`;
     return address;
   }
 

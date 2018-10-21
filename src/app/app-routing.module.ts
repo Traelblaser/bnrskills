@@ -4,7 +4,7 @@ import { SkillsMasterComponent } from './skills-master/skills-master.component';
 
 const routes: Routes = [
   { path: 'skills', component: SkillsMasterComponent},
-  { path: 'build/:role/:id', component: SkillsMasterComponent},
+  { path: 'skills/build/:role/:id', component: SkillsMasterComponent},
   { path: 'skills/:role', component: SkillsMasterComponent}
 ];
 
