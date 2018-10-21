@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs/operators';
+
 import { Skillrow } from '../skillrow';
 import { Skill } from '../skill';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -36,7 +36,6 @@ export class SkillsMasterComponent implements OnInit {
     if (this.route) {
       const id = this.route.snapshot.paramMap.get('id');
       
-      console.log(id);
       if (id) this.load(id);
     }
     this.updateTotal();

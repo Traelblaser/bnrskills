@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 import { StatFamily } from './stat-family';
 import { Skillrow } from './skillrow';
 
-import { SkillTree } from './skill-tree';
 import { Dragon } from './data/dragon/module';
 import { ClassService } from './class.service';
 import { Archer } from './data/archer/module';
 import { Mage } from './data/mage/module';
 import { Warrior } from './data/war/module';
 
-import { SourceMapGenerator } from '@angular/compiler/src/output/source_map';
 //import { Archer } from './data/arch/module';
 
 @Injectable({
@@ -83,61 +81,60 @@ loadTrees() :void {
 }
 
 getTree(playerClass: string, playerFamily: string) : any {
-  console.log(playerClass, playerFamily);
-  let classes: string[] = this.classService.getClassesNoPromise();
-  if (!classes.includes(playerClass)) 
-    return;
+    let classes: string[] = this.classService.getClassesNoPromise();
+    if (!classes.includes(playerClass)) 
+      return;
 
-  if (playerClass == "Dragonkin") {
-    if (Dragon.stats.includes(playerFamily)) {
-      let index = Dragon.stats.indexOf(playerFamily);
-      return Dragon.SkillTrees[index];
+    if (playerClass == "Dragonkin") {
+      if (Dragon.stats.includes(playerFamily)) {
+        let index = Dragon.stats.indexOf(playerFamily);
+        return Dragon.SkillTrees[index];
+      }
+    }
+    else if (playerClass == "Archer") {
+      if (Archer.stats.includes(playerFamily)) {
+        let index = Archer.stats.indexOf(playerFamily);
+        return Archer.SkillTrees[index];
+      }
+    }
+    else if (playerClass == "Mage") {
+      if (Mage.stats.includes(playerFamily)) {
+        let index = Mage.stats.indexOf(playerFamily);
+        return Mage.SkillTrees[index];
+      }
+    }
+    else if (playerClass == "Warrior") {
+      if (Warrior.stats.includes(playerFamily)) {
+        let index = Warrior.stats.indexOf(playerFamily);
+        return Warrior.SkillTrees[index];
+      }
     }
   }
-  else if (playerClass == "Archer") {
-    if (Archer.stats.includes(playerFamily)) {
-      let index = Archer.stats.indexOf(playerFamily);
-      return Archer.SkillTrees[index];
-    }
-  }
-  else if (playerClass == "Mage") {
-    if (Mage.stats.includes(playerFamily)) {
-      let index = Mage.stats.indexOf(playerFamily);
-      return Mage.SkillTrees[index];
-    }
-  }
-  else if (playerClass == "Warrior") {
-    if (Warrior.stats.includes(playerFamily)) {
-      let index = Warrior.stats.indexOf(playerFamily);
-      return Warrior.SkillTrees[index];
-    }
-  }
-}
 
-private checkRulesSubTree?(tree: Skillrow[]) : void {
-    let left = 0;
-    let center = 0;
-    let right = 0;
-    for(let row of tree) {
-      if (row.left) {
-        left = row.left.required;
-        if (row.left.levels != row.left.stats.length) {
-          console.log("stat mismatch", row.left);
+  private checkRulesSubTree?(tree: Skillrow[]) : void {
+      let left = 0;
+      let center = 0;
+      let right = 0;
+      for(let row of tree) {
+        if (row.left) {
+          left = row.left.required;
+          if (row.left.levels != row.left.stats.length) {
+            console.log("stat mismatch", row.left);
+          }
+        }
+        if (row.center) {
+          center = row.center.required;
+          if (row.center.levels != row.center.stats.length) {
+            console.log("stat mismatch", row.center);
+          }
+        }
+        if (row.right) {
+          right = row.right.required;
+          if (row.right.levels != row.right.stats.length) {
+            console.log("stat mismatch", row.right);
+          }
         }
       }
-      if (row.center) {
-        center = row.center.required;
-        if (row.center.levels != row.center.stats.length) {
-          console.log("stat mismatch", row.center);
-        }
-      }
-      if (row.right) {
-        right = row.right.required;
-        if (row.right.levels != row.right.stats.length) {
-          console.log("stat mismatch", row.right);
-        }
-      }
-    }
-}
+  }
 
 }
