@@ -4,14 +4,23 @@ import { Skillrow } from './skillrow';
 
 import { SkillTree } from './skill-tree';
 import { Dragon } from './data/dragon/module';
+import { ClassService } from './class.service';
+import { Archer } from './data/archer/module';
+import { Mage } from './data/mage/module';
+import { Warrior } from './data/war/module';
+
+import { SourceMapGenerator } from '@angular/compiler/src/output/source_map';
 //import { Archer } from './data/arch/module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillTreeService{
+  classService: ClassService;
 
-  constructor() { }
+  constructor(classService: ClassService) { 
+    this.classService = classService;
+  }
 
   link(tree: StatFamily) : string {
     var address = "";
@@ -75,12 +84,33 @@ loadTrees() :void {
 
 getTree(playerClass: string, playerFamily: string) : any {
   console.log(playerClass, playerFamily);
+  let classes: string[] = this.classService.getClassesNoPromise();
+  if (!classes.includes(playerClass)) 
+    return;
+
   if (playerClass == "Dragonkin") {
-      if (Dragon.stats.includes(playerFamily)) {
-        
-        if (playerFamily == "STR") return Dragon.SkillTrees[0];
-        return Dragon.SkillTrees[1];
-      }
+    if (Dragon.stats.includes(playerFamily)) {
+      let index = Dragon.stats.indexOf(playerFamily);
+      return Dragon.SkillTrees[index];
+    }
+  }
+  else if (playerClass == "Archer") {
+    if (Archer.stats.includes(playerFamily)) {
+      let index = Archer.stats.indexOf(playerFamily);
+      return Archer.SkillTrees[index];
+    }
+  }
+  else if (playerClass == "Mage") {
+    if (Mage.stats.includes(playerFamily)) {
+      let index = Mage.stats.indexOf(playerFamily);
+      return Mage.SkillTrees[index];
+    }
+  }
+  else if (playerClass == "Warrior") {
+    if (Warrior.stats.includes(playerFamily)) {
+      let index = Warrior.stats.indexOf(playerFamily);
+      return Warrior.SkillTrees[index];
+    }
   }
 }
 

@@ -205,13 +205,13 @@ export const DEF: Skillrow[] = [
       required: 0,
       stats: [
           "Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 8% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 16% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 24% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 32% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 40% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 48% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 56% when triggered. Lasts for 4s"
-          ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 64% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 7.5% and decreases damage received by 16% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 10% and decreases damage received by 24% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 12.5% and decreases damage received by 32% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 15% and decreases damage received by 40% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 17.5% and decreases damage received by 48% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 15% and decreases damage received by 56% when triggered. Lasts for 4s"
+          ,"Flash Bolt/Blind Array improves HP restoring effect by 16.5% and decreases damage received by 64% when triggered. Lasts for 4s"
           ,"Flash Bolt/Blind Array improves HP restoring effect by 5% and decreases damage received by 72% when triggered. Lasts for 4s"
           ,"Flash Bolt/Blind Array improves HP restoring effect by 20% and decreases damage received by 80% when triggered. Lasts for 4s"
       ]

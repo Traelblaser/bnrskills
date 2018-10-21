@@ -12,6 +12,10 @@ export class ClassService {
     return Promise.resolve(CLASSES);
   }
 
+  getClassesNoPromise() : string[] {
+    return CLASSES;
+  }
+
   getStats(playerClass: string) : string[] {
     return STATS[playerClass];
   }
