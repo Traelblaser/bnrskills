@@ -24,7 +24,8 @@ export class SkillTreeService {
   link(tree: SkillTree) : string {
     var address = "";
     for (let family of tree.SkillTrees) {
-      address += this.linkForFamily(family);
+      let family_link = this.linkForFamily(family);
+      address += family_link;
     }
     return address;
   }
