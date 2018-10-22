@@ -25,7 +25,7 @@ export class ClassService {
 const STATS = {
   "Warrior": ["STR", "STA"],
   "Archer": ["DEX", "INT"],
-  "Mage": ["DEX", "INT"],
+  "Mage": ["INT", "DEX"],
   "Dragonkin": ["STR", "INT"]
 };
 

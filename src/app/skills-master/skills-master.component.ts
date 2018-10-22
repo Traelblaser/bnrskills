@@ -4,7 +4,6 @@ import { Skillrow } from '../skillrow';
 import { Skill } from '../skill';
 import { ActivatedRoute } from '@angular/router';
 
-import { StatFamily } from '../stat-family';
 import { SkillTreeService } from '../skill-tree.service';
 import { ClassService } from '../class.service';
 import { SkillTree } from '../skill-tree';
@@ -148,11 +147,12 @@ export class SkillsMasterComponent implements OnInit {
     let totalDef = this.skillTreeService.getDefTotal(this.skillTree, this.stat);
 
     let total = 0;
+    
     let index = this.skillTree.stats.indexOf(this.stat);
     let family = this.skillTree.SkillTrees[index];
     for (let t in family) {
       if (t != this.tab) continue;
-
+      
       for (let r of family[t]) {
         if (row == r) {
           if (t == "ATK" || t == "DEF") {
@@ -208,11 +208,14 @@ export class SkillsMasterComponent implements OnInit {
 
   selectClass(selectedClass): void {
     this.stats = this.classService.getStats(selectedClass);
+    this.skillTree = this.skillTreeService.getTrees(selectedClass);
     this.selectedClass = selectedClass;
+    this.statIndex = 0;
+    this.stat = this.stats[this.statIndex];
+    
   }
   selectFamily(selectedClass, selectedFamily): void {
     //let tree = this.skillTreeService.getFamily(selectedClass, selectedFamily);
-    this.skillTree = this.skillTreeService.getTrees(selectedClass);
     this.stat = selectedFamily;
     this.statIndex = this.stats.indexOf(selectedFamily);
     //this.statFamily = tree;
