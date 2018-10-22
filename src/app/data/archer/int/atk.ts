@@ -5,7 +5,9 @@ export const ATK: Skillrow[] = [
         name: "Bloodthirsty",
         levels: 3,
         required: 2,
-        stats: []
+        stats: [
+            "Increases attacking attempts of Bloodlust by 3 times and converts 60% damage received into HP for 6s"
+        ]
     }, center: {
         name: "Heavenly Bless", 
         levels: 15,
