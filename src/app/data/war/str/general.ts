@@ -30,16 +30,16 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 6,
             stats: [ // 500 str
-                "Every 380 INT pts will increase your Max HP by 0.5%"
-                , "Every 380 INT pts will increase your Max HP by 1.0%"
-                , "Every 380 INT pts will increase your Max HP by 1.5%"
-                , "Every 380 INT pts will increase your Max HP by 2.0%"
-                , "Every 380 INT pts will increase your Max HP by 2.5%"
-                , "Every 380 INT pts will increase your Max HP by 3.0%"
-                , "Every 380 INT pts will increase your Max HP by 3.5%"
-                , "Every 380 INT pts will increase your Max HP by 4.0%"
-                , "Every 380 INT pts will increase your Max HP by 4.5%"
-                , "Every 380 INT pts will increase your Max HP by 5.0%"
+                "Every 500 STR pts will increase your Max HP by 0.5%"
+                , "Every 500 STR pts will increase your Max HP by 1.0%"
+                , "Every 500 STR pts will increase your Max HP by 1.5%"
+                , "Every 500 STR pts will increase your Max HP by 2.0%"
+                , "Every 500 STR pts will increase your Max HP by 2.5%"
+                , "Every 500 STR pts will increase your Max HP by 3.0%"
+                , "Every 500 STR pts will increase your Max HP by 3.5%"
+                , "Every 500 STR pts will increase your Max HP by 4.0%"
+                , "Every 500 STR pts will increase your Max HP by 4.5%"
+                , "Every 500 STR pts will increase your Max HP by 5.0%"
 
             ]
         }
@@ -74,16 +74,16 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 0,
             stats: [
-                "Every 380 INT pts will increase DEF by 30"
-                , "Every 380 INT pts will increase DEF by 60"
-                , "Every 380 INT pts will increase DEF by 90"
-                , "Every 380 INT pts will increase DEF by 120"
-                , "Every 380 INT pts will increase DEF by 150"
-                , "Every 380 INT pts will increase DEF by 180"
-                , "Every 380 INT pts will increase DEF by 210"
-                , "Every 380 INT pts will increase DEF by 240"
-                , "Every 380 INT pts will increase DEF by 270"
-                , "Every 380 INT pts will increase DEF by 300"
+                "Every 500 STR pts will increase DEF by 30"
+                , "Every 500 STR pts will increase DEF by 60"
+                , "Every 500 STR pts will increase DEF by 90"
+                , "Every 500 STR pts will increase DEF by 120"
+                , "Every 500 STR pts will increase DEF by 150"
+                , "Every 500 STR pts will increase DEF by 180"
+                , "Every 500 STR pts will increase DEF by 210"
+                , "Every 500 STR pts will increase DEF by 240"
+                , "Every 500 STR pts will increase DEF by 270"
+                , "Every 500 STR pts will increase DEF by 300"
 
             ]
         },
@@ -93,16 +93,16 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 6,
             stats: [
-                , "Every 380 INT pts will increase ATK by 80"
-                , "Every 380 INT pts will increase ATK by 160"
-                , "Every 380 INT pts will increase ATK by 240"
-                , "Every 380 INT pts will increase ATK by 320"
-                , "Every 380 INT pts will increase ATK by 400"
-                , "Every 380 INT pts will increase ATK by 480"
-                , "Every 380 INT pts will increase ATK by 560"
-                , "Every 380 INT pts will increase ATK by 640"
-                , "Every 380 INT pts will increase ATK by 720"
-                , "Every 380 INT pts will increase ATK by 800"
+                , "Every 500 STR pts will increase ATK by 80"
+                , "Every 500 STR pts will increase ATK by 160"
+                , "Every 500 STR pts will increase ATK by 240"
+                , "Every 500 STR pts will increase ATK by 320"
+                , "Every 500 STR pts will increase ATK by 400"
+                , "Every 500 STR pts will increase ATK by 480"
+                , "Every 500 STR pts will increase ATK by 560"
+                , "Every 500 STR pts will increase ATK by 640"
+                , "Every 500 STR pts will increase ATK by 720"
+                , "Every 500 STR pts will increase ATK by 800"
 
             ]
         }
@@ -249,16 +249,16 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 10,
             stats: [
-                "Every 380 INT pts added to your character will increase your Dmg Reduction by 0.5%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 1%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 1.5%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 2%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 2.5%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 3%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 3.5%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 4%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 4.5%"
-                , "Every 380 INT pts added to your character will increase your Dmg Reduction by 5%"
+                "Every 500 STR pts added to your character will increase your Dmg Reduction by 0.5%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 1%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 1.5%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 2%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 2.5%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 3%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 3.5%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 4%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 4.5%"
+                , "Every 500 STR pts added to your character will increase your Dmg Reduction by 5%"
 
             ]
         }
@@ -288,16 +288,16 @@ export const General: Skillrow[] = [
             levels: 10,
             required: 0,
             stats: [
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
-                , "Every 380 INT pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
+                , "Every 500 STR pts added to your character will increase your Dmg Up by 6%"
 
             ]
         }

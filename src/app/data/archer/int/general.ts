@@ -5,12 +5,40 @@ export const General: Skillrow[] = [
         name: "Steel Armor",
         levels: 15,
         required: 10,
-        stats: []
+        stats: [
+            "Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 15%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 30%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 45%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 60%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 75%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 90%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 105%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 120%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 135%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 150%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 165%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 180%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 195%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 210%"
+            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 225%"
+        ]
     }, center: null, right: {
         name: "Greater Stamina",
         levels: 10,
         required: 6,
-        stats: []
+        stats: [
+            "Every 380 INT pts will increase your Max HP by 0.5%"
+            ,"Every 380 INT pts will increase your Max HP by 1.0%"
+            ,"Every 380 INT pts will increase your Max HP by 1.5%"
+            ,"Every 380 INT pts will increase your Max HP by 2.0%"
+            ,"Every 380 INT pts will increase your Max HP by 2.5%"
+            ,"Every 380 INT pts will increase your Max HP by 3.0%"
+            ,"Every 380 INT pts will increase your Max HP by 3.5%"
+            ,"Every 380 INT pts will increase your Max HP by 4.0%"
+            ,"Every 380 INT pts will increase your Max HP by 4.5%"
+            ,"Every 380 INT pts will increase your Max HP by 5.0%"
+
+        ]
     }},
     { depth: 2, stat: "INT", points: 850, spend: 11, left: {
         name: "Weapon Mastery",
