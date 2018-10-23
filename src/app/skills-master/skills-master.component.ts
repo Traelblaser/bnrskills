@@ -8,7 +8,7 @@ import { SkillTreeService } from '../skill-tree.service';
 import { ClassService } from '../class.service';
 import { SkillTree } from '../skill-tree';
 import BigNumber from 'bignumber.js';
-import { Base64} from 'js-base64';
+import { Base64 } from 'js-base64';
 
 @Component({
   selector: 'app-skills-master',
@@ -80,7 +80,7 @@ export class SkillsMasterComponent implements OnInit {
     //var num = new BigNumber(id, 64);
     //var address = num.toString(21);
     //var address = Base64.decode(id);
-    BigNumber.config({ALPHABET : "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz_~-"});
+    BigNumber.config({ ALPHABET: "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz_~-" });
     var num = new BigNumber(id, 64);
     var address = num.toString(21);
     console.log("address decoded ", address);
@@ -134,10 +134,29 @@ export class SkillsMasterComponent implements OnInit {
     this.tab = tab;
   }
 
-  add() {
+  remove() {
     let skill = this.selectedSkill;
     let row = this.selectedRow;
 
+    if (!skill) return;
+    if (!row) return;
+
+    if (!skill.level) skill.level = 0;
+    if (skill.level <= 0) {
+      skill.level = 0;
+      return;
+    }
+    if (!this.isValid(row, skill))
+      return;
+
+    skill.level--;
+    this.total--;
+    this.link();
+  }
+
+  add() {
+    let skill = this.selectedSkill;
+    let row = this.selectedRow;
     if (!skill) return;
     if (!row) return;
 
@@ -147,6 +166,16 @@ export class SkillsMasterComponent implements OnInit {
       return;
     }
 
+    if (!this.isValid(row, skill))
+      return;
+
+    skill.level++;
+    this.total++;
+    this.link();
+  }
+
+
+  isValid(row, skill) {
     let pos = -1;
     if (row.left == skill) { pos = 0; }
     else if (row.center == skill) { pos = 1; }
@@ -156,28 +185,28 @@ export class SkillsMasterComponent implements OnInit {
     let totalDef = this.skillTreeService.getDefTotal(this.skillTree, this.stat);
 
     let total = 0;
-    
+
     let index = this.skillTree.stats.indexOf(this.stat);
     let family = this.skillTree.SkillTrees[index];
     for (let t in family) {
       if (t != this.tab) continue;
-      
+
       for (let r of family[t]) {
         if (row == r) {
           if (t == "ATK" || t == "DEF") {
             if (total < row.spend) {
               console.log("haven't spent enough");
-              return;
+              return false;
             }
           }
           else {
             if (pos == 0 && totalAtk < row.spend) {
               console.log("haven't spent enough in ATK");
-              return;
+              return false;
             }
             if (pos != 0 && totalDef < row.spend) {
               console.log("haven't spent enough in DEF");
-              return;
+              return false;
             }
           }
 
@@ -188,7 +217,7 @@ export class SkillsMasterComponent implements OnInit {
           total += r.left.level;
           if (pos == 0 && r.left.level < r.left.required) {
             console.log("left");
-            return;
+            return false;
           }
         }
         if (r.center) {
@@ -196,7 +225,7 @@ export class SkillsMasterComponent implements OnInit {
           total += r.center.level;
           if (pos == 1 && r.center.level < r.center.required) {
             console.log("center");
-            return;
+            return false;
           }
         }
         if (r.right) {
@@ -204,15 +233,13 @@ export class SkillsMasterComponent implements OnInit {
           total += r.right.level;
           if (pos == 2 && r.right.level < r.right.required) {
             console.log("right");
-            return;
+            return false;
           }
         }
       }
     }
-  
-    skill.level++;
-    this.total++;
-    this.link();
+    return true;
+
   }
 
   selectClass(selectedClass): void {
@@ -221,7 +248,7 @@ export class SkillsMasterComponent implements OnInit {
     this.selectedClass = selectedClass;
     this.statIndex = 0;
     this.stat = this.stats[this.statIndex];
-    
+
   }
   selectFamily(selectedClass, selectedFamily): void {
     //let tree = this.skillTreeService.getFamily(selectedClass, selectedFamily);
