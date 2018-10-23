@@ -9,6 +9,8 @@ import { Mage } from './data/mage/module';
 import { Warrior } from './data/war/module';
 import { SkillTree } from './skill-tree';
 
+import { BigNumber } from 'bignumber.js';
+
 //import { Archer } from './data/arch/module';
 
 @Injectable({
@@ -27,7 +29,11 @@ export class SkillTreeService {
       let family_link = this.linkForFamily(family);
       address += family_link;
     }
-    return address;
+    BigNumber.config({ALPHABET : "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz_~-"});
+    console.log("address before encoding", address);
+    var number = new BigNumber(address, 21);
+    return number.toString(64);
+
   }
   linkForFamily(family: StatFamily): string {
     var address = "";
@@ -77,8 +83,15 @@ export class SkillTreeService {
       }
     }
     return address;
-
+    //return Base64.encode( address);
   }
+
+  /*
+  convert( address: string) : string {
+    var num = new BigNumber(address, 21);
+    return num.toString(64);
+  }
+  */
 
   checkRules(tree: SkillTree) : void {
     for (let family of tree.SkillTrees) {

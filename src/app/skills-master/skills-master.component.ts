@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 import { SkillTreeService } from '../skill-tree.service';
 import { ClassService } from '../class.service';
 import { SkillTree } from '../skill-tree';
+import BigNumber from 'bignumber.js';
+import { Base64} from 'js-base64';
 
 @Component({
   selector: 'app-skills-master',
@@ -75,19 +77,26 @@ export class SkillsMasterComponent implements OnInit {
     this.skillTree = this.skillTreeService.getTrees(this.selectedClass);
     this.stats = this.classService.getStats(this.selectedClass);
     //this.statFamily = this.skillTreeService.getFamily(this.selectedClass, this.stats[0]);
+    //var num = new BigNumber(id, 64);
+    //var address = num.toString(21);
+    //var address = Base64.decode(id);
+    BigNumber.config({ALPHABET : "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz_~-"});
+    var num = new BigNumber(id, 64);
+    var address = num.toString(21);
+    console.log("address decoded ", address);
     this.stat = this.stats[this.statIndex];
 
     for (let statFamily of this.skillTree.SkillTrees) {
       for (let t in statFamily) {
         for (let row of statFamily[t]) {
           if (row.left) {
-            row.left.level = alphabet.indexOf(id[index++]);
+            row.left.level = alphabet.indexOf(address[index++]);
           }
           if (row.center) {
-            row.center.level = alphabet.indexOf(id[index++]);
+            row.center.level = alphabet.indexOf(address[index++]);
           }
           if (row.right) {
-            row.right.level = alphabet.indexOf(id[index++]);
+            row.right.level = alphabet.indexOf(address[index++]);
           }
         }
       }

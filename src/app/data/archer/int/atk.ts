@@ -17,7 +17,9 @@ export const ATK: Skillrow[] = [
         name: "Storm Giant",
         levels: 1,
         required: 1,
-        stats: []
+        stats: [
+            "Divine Force turns you into a Storm Giant and grants Whirlwind Attack, Whirlwind Smite, and Star Summon"
+        ]
     }},
     { depth: 2, stat: "INT", points: 850, spend: 11, left: {
         name: "Bloody Curse (PvP)",
