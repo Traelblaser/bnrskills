@@ -146,6 +146,7 @@ export class SkillsMasterComponent implements OnInit {
       skill.level = 0;
       return;
     }
+    // the rules are different when removing skills..
     if (!this.isValid(row, skill))
       return;
 

@@ -6,34 +6,43 @@ export const DEF: Skillrow[] = [
         levels: 10,
         required: 6,
         stats: [
-            "Ring of Element will summon a stronger Storm Element with 30% of your character's ATK"
-            ,"Ring of Element will summon a stronger Storm Element with 35% of your character's ATK"
+            "When summoning a Storm Element, dmg taken will reduce by 3% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 4% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 5% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 6% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 7% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 8% over 5s, can stack up to 3 times" // 6
+            ,"When summoning a Storm Element, dmg taken will reduce by 9% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 10% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 11% over 5s, can stack up to 3 times"
+            ,"When summoning a Storm Element, dmg taken will reduce by 12% over 5s, can stack up to 3 times"
         ]
     }, center: {
         name: "Glare Slash",
         levels: 5,
         required: 0,
         stats: [
-            "Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 0.6s"
-            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 0.8s"
-            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.0s"
-            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 2.4s"
+            "After using Ring of Fortitude, it will blind enemy for an extra 0.6s"
+            ,"After using Ring of Fortitude, it will blind enemy for an extra 1.2s"
+            ,"After using Ring of Fortitude, it will blind enemy for an extra 1.8s"
+            ,"After using Ring of Fortitude, it will blind enemy for an extra 2.4s"
+            ,"After using Ring of Fortitude, it will blind enemy for an extra 3s"
         ]
     }, right: {
         name: "HP Absorb",
         levels: 10,
         required: 6,
         stats: [
-            "Deals 3% extra damage to poisoned enemies"
-            ,"Deals 4% extra damage to poisoned enemies"
-            ,"Deals 5% extra damage to poisoned enemies"
-            ,"Deals 6% extra damage to poisoned enemies"
-            ,"Deals 7% extra damage to poisoned enemies"
-            ,"Deals 8% extra damage to poisoned enemies"
-            ,"Deals 9% extra damage to poisoned enemies"
-            ,"Deals 10% extra damage to poisoned enemies"
-            ,"Deals 11% extra damage to poisoned enemies"
-            ,"Deals 12% extra damage to poisoned enemies"
+            "Every time Ring of Blessing attacks, it can restore 20% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 40% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 60% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 800% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 100% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 120% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 140% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 160% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 180% more HP"
+            ,"Every time Ring of Blessing attacks, it can restore 200% more HP"
         ]
     }}
   , { depth: 2, stat: "DEX", points: 1700, spend: 11, left: {

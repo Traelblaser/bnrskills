@@ -8,8 +8,16 @@ export const ATK: Skillrow[] =
         levels: 10,
         required: 6,
         stats: [
-            "Ring of Element will summon a stronger Storm Element with 30% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 5% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 10% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 15% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 20% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 25% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 30% of your character's ATK"
             ,"Ring of Element will summon a stronger Storm Element with 35% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 40% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 45% of your character's ATK"
+            ,"Ring of Element will summon a stronger Storm Element with 50% of your character's ATK"
         ]
     }, center: {
         name: "Frozen Trap",
@@ -19,6 +27,12 @@ export const ATK: Skillrow[] =
             "Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 0.6s"
             ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 0.8s"
             ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.0s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.2s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.4s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.6s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 1.8s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 2.0s"
+            ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 2.2s"
             ,"Changes Frost Trap of Ring of Oracle to Frozen Trap. Trap explodes in 1.5s and freezes enemy for 2.4s"
         ]
     }, right: {
@@ -43,14 +57,31 @@ export const ATK: Skillrow[] =
       levels: 10,
       required: 6,
       stats: [
-          "Every time Storm Element attacks, it grants a 10% chance to deal 3X etra damage" //10
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 1.2X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 1.4X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 1.6X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 1.8X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 2X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 2.2X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 2.4X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 2.6X etra damage" 
+        ,"Every time Storm Element attacks, it grants a 10% chance to deal 2.8X etra damage" 
+          ,"Every time Storm Element attacks, it grants a 10% chance to deal 3X etra damage" 
       ]
   }, center: null, right: {
       name: "Dark Hold (PvP)",
       levels: 10,
       required: 6,
-      stats: [
+      stats: [  
           "Each attack grants a 3% chance to reduce target's Hit Rate by 40% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 43% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 50% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 53% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 60% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 63% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 70% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 73% for 3s"
+          ,"Each attack grants a 3% chance to reduce target's Hit Rate by 80% for 3s"
           ,"Each attack grants a 3% chance to reduce target's Hit Rate by 83% for 3s"
 
       ]

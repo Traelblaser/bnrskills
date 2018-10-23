@@ -7,7 +7,7 @@ export const General: Skillrow[] =
         levels: 15,
         required: 10,
         stats: [
-            ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 15%"
+            "Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 15%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 30%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 45%"
             ,"Equip the whole set (leggings, armor, gauntlets, boots and helmet) to boost HP granted by armor by 60%"
